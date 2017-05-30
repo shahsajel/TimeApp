@@ -1,0 +1,28 @@
+.center {
+  margin: auto;
+  width: 10%;
+  border: 3px solid #73AD21;
+  padding: 10px;
+  z-index: 1;
+}
+
+#bg {
+  position: fixed;
+  top: 0;
+  right: 30%;
+  bottom: 0;
+  left: 30%;subl
+  margin: 0 -600px;
+  background-size: cover;
+  z-index: 0;
+}
+
+h1, input {
+  font-size: 1000%;
+  text-align: center;
+  color: red;
+  z-index: 6;
+  position: relative;
+  margin-top: 300px;
+  margin-bottom: 100px;
+}

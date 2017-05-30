@@ -1,0 +1,71 @@
+<!doctype html>
+	<head>
+		<!-- Angular Material requires Angular.js Libraries -->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+
+		<!-- Angular Material Library -->
+		<script src="node_modules/angular-material/angular-material.min.js"></script>
+		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+
+		<!-- Actual application script -->
+		<script src="scripts/timer.js"></script>
+
+		<!-- CSS Style -->
+		<style>
+		.center {
+		  margin: auto;
+		  width: 10%;
+		  border: 3px solid #73AD21;
+		  padding: 10px;
+		  z-index: 1;
+		}
+		#bg {
+	      position: fixed;
+	      top: 0;
+	      right: 30%;
+	      bottom: 0;
+	      left: 30%;subl
+	      margin: 0 -600px;
+	      background-size: cover;
+	      z-index: 0;
+		}
+		h1, input {
+    	  font-size: 1000%;
+    	  text-align: center;
+    	  color: red;
+    	  z-index: 6;
+    	  position: relative;
+    	  margin-top: 300px;
+    	  margin-bottom: 100px;
+    	}
+		</style>
+	</head>
+
+	<body ng-app="TimerApp" ng-controller="TimerCtrl">
+		<!-- Backgroun Image -->
+		<div id="bg">
+  		  <img src="http://www.kristielleamy.com/wp-content/uploads/2014/01/background-neutral.jpg" width="100%" height="200%" alt="">
+		</div>
+
+		<!-- Html -->
+		<div ng-hide="isEditing">
+		  <h1 ng-click = "reset();">
+		    {{(time/100).toFixed(2)}}
+		  </h1>
+		</div>
+
+		<div ng-show="isEditing">
+		  <input ng-keydown=checkKey($event); ng-model="timePlaceHolder">
+		</div>
+
+
+		<center>
+		<md-button class="md-raised md-warn md-hue-1" ng-click="window.alert(); startButtonClick();"> {{startButton}} </md-button>
+		</center>
+
+		
+	</body>
+</html>
